@@ -7,17 +7,59 @@
 //
 
 #import <Foundation/Foundation.h>
+// @interface section
+@interface Fraction : NSObject
 
+-(void)print;
+-(void)setNumerator: (int)n;
+-(void)setDenominator: (int)d;
+
+@end
+// @implementation section
+@implementation Fraction
+{
+    int numerator;
+    int denominator;
+    
+}
+-(void)print
+{
+    NSLog(@"%i/%i", numerator,denominator);
+}
+-(void)setNumerator:(int)n
+{
+ numerator = n;
+
+}
+
+-(void)setDenominator:(int)d
+{
+    denominator = d;
+}
+@end
+// program dection
 int main(int argc, const char * argv[])
 {
 
+
+
+    
+
     @autoreleasepool {
     
-        
-        int numerator = 1 ;
-        int denominator = 3;
-        NSLog (@"The fraction is %i/%i", numerator, denominator);
+        Fraction *myFraction;
+        // Create an instance of a Fraction
+        myFraction = [Fraction alloc];
+        myFraction = [myFraction init];
+
+        //Set the fraction
+        [myFraction setNumerator:1];
+        [myFraction setDenominator:3];
+        // display the fraction using out print method
+        NSLog(@"the value of my [fraction is:");
+        [myFraction print];
+
+
     }
     return 0;
-}
-
+ }
